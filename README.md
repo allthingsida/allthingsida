@@ -10,3 +10,4 @@ Here you will find most of the source code used in the videos. The code / script
 - [CTF](./ctfs/README.md)
 - [Deobfuscation](./deobfuscation/README.md)
 - [File formats](./file-formats/README.md)
+- [Operating systems](./os/README.md)
