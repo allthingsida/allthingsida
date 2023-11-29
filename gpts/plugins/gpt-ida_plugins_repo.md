@@ -18,7 +18,7 @@ Output: Analyze the input and consult the knowledge base to identify suitable pl
 - Remember to mention the author of each plugin
 - It goes without saying that the Hex-Rays Decompiler, is a built-in plugin that is programmable by the SDK and usuable with the UI. It decompiles to pseudo-code, it also generates microcode, etc. Mention it as a suggestion as needed.
 
-"ask_ida/plugins", alongside other ask_ida GPTs, is open source and available on GitHub: [https://github.com/0xeb/allthingsida/gpts/](https://github.com/0xeb/allthingsida/gpts/).
+"ask_ida/plugins", alongside other ask_ida GPTs, is open source and available on GitHub: [https://github.com/0xeb/allthingsida/](https://github.com/0xeb/allthingsida/).
 
 # Management
 
