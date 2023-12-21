@@ -11,3 +11,4 @@ Here you will find most of the source code used in the videos. The code / script
 - [File formats](file-formats/README.md)
 - [Operating systems](os/README.md)
 - [Collection of OpenAI related GPTs](gpts/README.md)
+- [Presentations](presentations/README.md)
