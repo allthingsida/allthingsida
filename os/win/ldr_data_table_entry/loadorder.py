@@ -1,6 +1,6 @@
 # PEB/_LDR_DATA_TABLE_ENTRY module enumeration in "Load Order"
 #
-# by Elias Bachaalany (c) AllThingsIDA
+# AllThingsIDA (c) Elias Bachaalany
 #
 
 import idaapi

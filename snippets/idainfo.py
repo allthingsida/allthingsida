@@ -1,6 +1,6 @@
 # IDA global information
 #
-# by Elias Bachaalany (c) AllThingsIDA
+# AllThingsIDA (c) Elias Bachaalany
 #
 
 import time

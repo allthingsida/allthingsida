@@ -1,0 +1,5 @@
+This repository and its contents are the intellectual property of AllThingsIDA (c) Elias Bachaalany. The materials provided here are intended solely for educational and non-commercial use. You are welcome to learn from and share the code and resources found in this repository, but please do not use them for commercial purposes without explicit permission from Elias Bachaalany.
+
+No part of this repository may be reproduced, distributed, or transmitted in any form or by any means, including photocopying, recording, or other electronic or mechanical methods, for commercial purposes without prior written permission from Elias Bachaalany.
+
+By using this repository, you agree to respect these terms and acknowledge that the materials are provided for educational enrichment only, not for commercial gain.

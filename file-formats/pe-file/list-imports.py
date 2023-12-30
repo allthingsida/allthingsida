@@ -1,5 +1,5 @@
 # PE import table dumper for IDA
-# by Elias Bachaalany (c) AllThingsIDA
+# AllThingsIDA (c) Elias Bachaalany
 
 import idaapi, idc
 

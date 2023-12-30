@@ -1,6 +1,6 @@
 # Function Stitcher
 #
-# by Elias Bachaalany (c) AllThingsIDA
+# AllThingsIDA (c) Elias Bachaalany
 #
 
 import idc, idaapi, idautils
