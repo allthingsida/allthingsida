@@ -65,7 +65,7 @@ void register_extensions()
     py::gil_scoped_acquire acquire;
     py::module_ idaapi_module = py::module_::import(PY_MODULE_NAME);
 
-    // Check if 'ext' exists in idaapi, if not create it as a dictionary
+    // Check if 'ext' exists in idaapi
     py::object ext;
     if (py::hasattr(idaapi_module, PY_EXT_NAME))
     {
