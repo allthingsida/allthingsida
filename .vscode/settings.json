@@ -1,0 +1,8 @@
+{
+    "files.exclude": {
+        "**/.git": true,           // Exclude .git folder
+        "**/.DS_Store": true,      // Exclude .DS_Store files
+        "**/__pycache__": true,    // Exclude node_modules folder
+        "**/build": true,          // Exclude node_modules folder
+    }
+}
