@@ -4,7 +4,7 @@ This is the official code repository for the All Things IDA [YouTube Channel](ht
 
 Here you will find most of the source code used in the videos. The code / scripts are meant for educational purposes only and are not meant to be used in production environments.
 
-# Contents
+## Contents
 
 - [CTF](ctfs/README.md)
 - [Deobfuscation](deobfuscation/README.md)
@@ -13,4 +13,14 @@ Here you will find most of the source code used in the videos. The code / script
 - [Operating systems](os/README.md)
 - [Collection of OpenAI related GPTs](gpts/README.md)
 - [Presentations](presentations/README.md)
+- [C++ SDK](sdk/README.md)
 
+## Dependencies
+
+Some of the sample code requires external dependencies.
+
+First, make sure all the submodules are initialized:
+
+```bash
+git submodule update --init --recursive
+```
