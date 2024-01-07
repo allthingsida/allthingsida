@@ -130,7 +130,7 @@ public:
     }
 };
 
-// Required plugin descriptors
+//--------------------------------------------------------------------------
 plugin_t PLUGIN = 
 {
     IDP_INTERFACE_VERSION,
