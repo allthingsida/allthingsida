@@ -4,6 +4,7 @@
 //
 // Information extracted with resym v0.3.0 and curated by Elias Bachaalany
 //
+// In IDA, go to "Options -> Compiler" and select 'clang', then specify these switches: -x c++ -target x86_64-pc-win32
 
 #include <stdint.h>
 
