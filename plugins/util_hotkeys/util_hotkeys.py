@@ -1,3 +1,10 @@
+"""
+Utility Hotkeys plugin for IDA Pro
+
+Used for quickly using pre-registered hotkeys for various utilities.
+
+by Elias Bachaalany (c) AllThingsIDA
+"""
 import idaapi
 
 UTIL_HOTKEYS = range(ord('A'), ord('Z') + 1)
@@ -20,7 +27,7 @@ class UtilHotkeys_plugmod_t(idaapi.plugmod_t):
     def run(self, _):
         return 0
 
-class hello_plugin_t(idaapi.plugin_t):
+class UtilHotkeys_plugin_t(idaapi.plugin_t):
     flags = idaapi.PLUGIN_FIX | idaapi.PLUGIN_MULTI
     comment = "Utility hotkeys registration"
     help = "Press Ctrl-Alt-Shift-[A-Z] to trigger a placeholder function"
@@ -31,4 +38,4 @@ class hello_plugin_t(idaapi.plugin_t):
         return UtilHotkeys_plugmod_t()
 
 def PLUGIN_ENTRY():
-    return hello_plugin_t()
+    return UtilHotkeys_plugin_t()
