@@ -19,5 +19,5 @@ While the title of this talk refers to the exploit as a "buffer overflow", in mo
 
 ### Resources
 
-- [StarCraft EUD Emulator.pdf](StarCraft_EUD_Emulator.pdf)
-- [Presentation video + backstory](https://youtu.be/fcdUEpI0gyE)
+- [StarCraft EUD Emulator.pdf](./StarCraft%20EUD%20Emulator/StarCraft_EUD_Emulator.pdf)
+- [Presentation video](https://youtu.be/fcdUEpI0gyE)
