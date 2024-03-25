@@ -4,4 +4,4 @@ This repository contains a collection of compact plugins designed to enhance pro
 
 ## Util Hotkeys
 
-This plugin assigns shortcuts from "Ctrl-Alt-Shift-A" to "Z" in IDA Pro to placeholder functions, enabling easy customization of actions by replacing these functions with your own code.
+[This plugin](./util_hotkeys/README.md) assigns shortcuts from "Ctrl-Alt-Shift-A" to "Z" in IDA Pro to placeholder functions, enabling easy customization of actions by replacing these functions with your own code.
