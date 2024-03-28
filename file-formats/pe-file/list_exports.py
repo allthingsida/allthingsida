@@ -1,15 +1,11 @@
 # PE export table dumper for IDA
 # AllThingsIDA (c) Elias Bachaalany
 
-import idaapi
-import idc
+import idaapi, idc, idautils
 
-dos_tp = idaapi.Appcall.typedobj('IMAGE_DOS_HEADER;')
-idd_tp = idaapi.Appcall.typedobj('IMAGE_DATA_DIRECTORY;')
-inh_tp = idaapi.Appcall.typedobj('IMAGE_NT_HEADERS;')
-ied_tp = idaapi.Appcall.typedobj('IMAGE_EXPORT_DIRECTORY;')
+from common import *
 
-def main(base):
+def dump_exports(base):
     ok, dos = dos_tp.retrieve(base)
     if not ok:
         return (False, 'Error DOS')
@@ -73,7 +69,14 @@ def main(base):
     return (True, None)
 
 # ----------------------------
-idaapi.msg_clear()
-ok, err = main(idaapi.get_imagebase())
-if not ok:
-    print(f'error: {err}')
+def main():
+    idaapi.msg_clear()
+    print(msg := 'Dumping exports...')
+    print('~' * len(msg))
+    for m in idautils.Modules():
+        print(f'BASE: {m.base:x} Name: {m.name}')
+        dump_exports(m.base)
+        print('-' * 80)
+
+if __name__ == '__main__':
+    main()

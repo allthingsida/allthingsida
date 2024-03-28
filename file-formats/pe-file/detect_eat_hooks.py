@@ -10,14 +10,7 @@ by Elias Bachaalany (c) AllThingsIDA
 
 import idaapi, idc, idautils
 
-try:
-    dos_tp = idaapi.Appcall.typedobj('IMAGE_DOS_HEADER;')
-    idd_tp = idaapi.Appcall.typedobj('IMAGE_DATA_DIRECTORY;')
-    inh_tp = idaapi.Appcall.typedobj('IMAGE_NT_HEADERS;')
-    ied_tp = idaapi.Appcall.typedobj('IMAGE_EXPORT_DIRECTORY;')
-except Exception as e:
-    print('Error loading proper types. Please make sure you have the proper mssdk TIL files loaded!')
-    raise e
+from common import *
 
 def print_hooks(mod):
     base = mod.base
@@ -102,10 +95,14 @@ def main():
         return
     
     idaapi.msg_clear()
+    found_count = 0
     for mod in idautils.Modules():
         ok, nb_hooks = print_hooks(mod)
         if ok and nb_hooks:
             print(f'-------{nb_hooks} hooks found--------')
+            found_count += nb_hooks
+
+    print(f'Total hooks found: {found_count}')
 
 if __name__ == '__main__':
     main()
