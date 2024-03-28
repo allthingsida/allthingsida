@@ -2,7 +2,7 @@
 
 Here you will find presentations from various conferences and events I attended.
 
-## [Starcraft: Emulating a buffer overflow for fun and profit - Elias Bachaalany](StarCraft_EUD_Emulator.pdf)
+## [StarCraft: Emulating a buffer overflow for fun and profit - Elias Bachaalany](StarCraft_EUD_Emulator.pdf)
 
 StarCraft 1.16.1 and older had a buffer overflow bug in the map parsing code. The hackers in South Korea leveraged the buffer overflow to create mods for the game. The mods became so popular that if we fix the buffer overflows we kill all the mods.
 
@@ -19,5 +19,5 @@ While the title of this talk refers to the exploit as a "buffer overflow", in mo
 
 ### Resources
 
-- [StarCraft EUD Emulator.pdf](StarCraft_EUD_Emulator.pdf)
-- [Presentation video + backstory](https://youtu.be/fcdUEpI0gyE)
+- [StarCraft EUD Emulator.pdf](./StarCraft%20EUD%20Emulator/StarCraft_EUD_Emulator.pdf)
+- [Presentation video](https://youtu.be/fcdUEpI0gyE)

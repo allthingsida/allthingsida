@@ -22,6 +22,7 @@ Please read the [LICENSE](LICENSE) file for the terms and conditions of using th
 - [Presentations](presentations/README.md)
 - [C++ SDK](sdk/README.md)
 - [Using IDA](using_ida/README.md)
+- [Plugins](plugins/README.md)
 
 ## Dependencies
 
