@@ -126,5 +126,12 @@ def _install_hotkeys(
     if debug:
         print("Hotkeys installed")
 
+def _utilhotkeys_func(l):
+    def decorator(f):
+        l.append(f)
+        return f
+    return decorator
+
 idaapi.utilhotkeys_install = _install_hotkeys
 idaapi.utilhotkeys_helpme = _helpme
+idaapi.utilhotkeys_func = _utilhotkeys_func
