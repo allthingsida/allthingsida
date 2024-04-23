@@ -4,4 +4,14 @@ This plugin was conceived after discussions with friends about the frustrations 
 
 **Note: If IDA hung in a way that never calls the UI message loop, this plugin will not be able to save your work. However, in most cases, this plugin should be able to save your work.**
 
-Build this plugin using [ida-cmake](https://github.com/0xeb/ida-cmake).
+Build this plugin using [ida-cmake](https://github.com/0xeb/ida-cmake). Get binaries from [here](https://github.com/0xeb/allthingsida/releases/tag/04232024).
+
+
+## How it works
+
+When IDA hangs, on rare occasions, the main UI will be in an infinite loop or waiting on an object. `eject_idb` creates a thread + hidden window + registers hotkey outside the Qt framework. This will still respond even if all threads in IDA are busy.
+
+`eject_plugin` will not work on all occasions because even though it operates in its own thread, because calling `save_database` will still (internally, inside the IDA kernel) call the main thread and thus hang!
+Hex-Rays can surely expose a low-level version of the `save_database` function that bypasses any UI calls and directly flushes and saves the database. Unfortunately, I am not aware of such a thing.
+
+Long story short, `eject_plugin` can be the last ditch effort before you kill the IDA instance and hope you don't have much unflushed changes in memory.
