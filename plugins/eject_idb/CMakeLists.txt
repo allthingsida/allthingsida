@@ -9,10 +9,10 @@ set(CMAKE_CXX_STANDARD 17)
 
 include($ENV{IDASDK}/ida-cmake/common.cmake)
 
-set(PLUGIN_NAME              eject)
+set(PLUGIN_NAME              eject_idb)
 set(PLUGIN_SOURCES           eject.cpp windowthreadhotkey.cpp windowthreadhotkey.h)
 set(PLUGIN_RUN_ARGS          "-t -z10000") # Debug messages for the debugger
 generate()
-disable_ida_warnings(eject)
+disable_ida_warnings(eject_idb)
 
 add_executable(eject_test main.cpp windowthreadhotkey.cpp windowthreadhotkey.h)
