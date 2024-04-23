@@ -67,7 +67,7 @@ struct plugin_ctx_t : public plugmod_t
         switch (arg)
         {
             case 0:
-                if (ask_yn(1, "HIDECANCEL\nDo you want to simulate an responsive UI hang?") == ASKBTN_YES)
+                if (ask_yn(1, "HIDECANCEL\nDo you want to simulate a responsive UI hang?") == ASKBTN_YES)
                     hang_with_loop(true);
                 break;
             case 1:
