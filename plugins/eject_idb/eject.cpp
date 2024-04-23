@@ -4,6 +4,8 @@
 #include <idp.hpp>
 #include <loader.hpp>
 #include <kernwin.hpp>
+
+// Edit the EJECTIDB_HOTKEY_xxx constants to change the hotkey and modifiers
 #include "windowthreadhotkey.h"
 
 extern "C" void do_eject()
@@ -13,6 +15,8 @@ extern "C" void do_eject()
     if (idx != qstring::npos)
     {
         qstring new_name = p.substr(0, idx) + ".ejected" + p.substr(idx);
+        // unfortunately, `save_database` calls the main thread/UI to display success/failure messages
+        // thus, 'ejecting' the IDB is not possible unless the UI is responsive to some degree
         save_database(new_name.c_str(), DBFL_BAK);
     }
 }
@@ -23,10 +27,11 @@ struct plugin_ctx_t : public plugmod_t
     CWindowThreadHotkey w;
     plugin_ctx_t() 
     {
-        w.start();
-        msg("eject_idb installed. Press Ctrl+Alt+E to eject the IDB when IDA UI enters an infinite loop!\n");
+        w.Start();
+        msg("eject_idb installed. Press Ctrl-Alt-E to eject the IDB when IDA UI enters an infinite loop!\n");
     }
 
+    // This hanging mode (or an equivalent 'for (;;) {}') cannot be 'ejected'
     void hang_with_event()
     {
         // Create an unsignaled, manual-reset event
@@ -50,6 +55,7 @@ struct plugin_ctx_t : public plugmod_t
         CloseHandle(hEvent);
     }
 
+    // This hanging mode (only if poll is true) can be 'ejected'
     bool hang_with_loop(bool poll=false)
     {
         warning("Will enter an infinite loop, press any key to stop it");
@@ -65,13 +71,14 @@ struct plugin_ctx_t : public plugmod_t
 
     bool idaapi run(size_t) override
     {
-        hang_with_loop(true);
+        if (ask_yn(1, "Do you want to simulate an responsive UI hang?") == ASKBTN_YES)
+            hang_with_loop(true);
         return true;
     }
 
     ~plugin_ctx_t() override
     {
-		w.stop();
+		w.Stop();
 	}
 };
 
@@ -80,11 +87,11 @@ plugin_t PLUGIN =
 {
     IDP_INTERFACE_VERSION,
     PLUGIN_FIX | PLUGIN_MULTI,
-    []()->plugmod_t* {return new plugin_ctx_t; }, // initialize
+    []()->plugmod_t* { return new plugin_ctx_t; }, // initialize
     nullptr,
     nullptr,
     nullptr,              // long comment about the plugin
     nullptr,              // multiline help about the plugin
-    "Eject: simuluate UI infinite loop",  // the preferred short name of the plugin
-    nullptr,              // the preferred hotkey to run the plugin
+    "eject_idb: simulate UI infinite loop",  // the preferred short name of the plugin
+    nullptr               // the preferred hotkey to run the plugin
 };

@@ -8,9 +8,9 @@ extern "C" void do_eject()
 
 int main() {
     CWindowThreadHotkey w;
-    w.start();
+    w.Start();
     printf("hello....press any key to exit()\n");
     _getch();
-    w.stop();
+    w.Stop();
     return -1;
 }
