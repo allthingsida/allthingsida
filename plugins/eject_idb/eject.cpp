@@ -108,6 +108,7 @@ extern "C" void do_eject()
     // Now it is safe to kill IDA.
     if (MessageBoxW(NULL, L"IDB has been ejected. Do you want to forcefully exit IDA?", L"eject_idb", MB_YESNO | MB_ICONINFORMATION) == IDYES)
 		ExitProcess(0);
+    plugin->disable_ui = false;
 }
 
 //--------------------------------------------------------------------------
