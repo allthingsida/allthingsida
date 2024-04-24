@@ -18,7 +18,7 @@ for module in modules:
                 patch_dst = oapi.caller - 1
             else:
                 continue
-            asm_code = f'call [0x{iat_ea:x}]'    
+            asm_code = f'call [{iat_ea:#x}]'    
 
             b, ok = ks.asm(asm_code, patch_dst)
             if not ok:
