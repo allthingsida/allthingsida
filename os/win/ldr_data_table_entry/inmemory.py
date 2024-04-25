@@ -43,6 +43,6 @@ def main(peb_ea=0):
             break
         i += 1
 
-idaapi.msg_clear()
-main()
-
+if __name__ == '__main__':
+    idaapi.msg_clear()
+    main()
