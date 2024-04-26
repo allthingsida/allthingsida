@@ -8,4 +8,4 @@ This repository contains a collection of compact plugins designed to enhance pro
 
 ## Eject IDB
 
-If IDA UI enters an infinute loop, then [eject idb](./eject_idb) might be able to help you save your database.
+If IDA UI or plugin/script enter an infinute loop or when a plugin crashes IDA, then [eject idb](./eject_idb) might be able to help you save your database.
