@@ -16,6 +16,10 @@
 
 #include "utils.hpp"
 
+// TODO:
+// - use on_event/modern mechanism
+// - delay event handler installation with a timer. give time to other plugins to install their handlers; come in last
+
 class semaphore_helper_t 
 {
 private:
@@ -145,7 +149,6 @@ struct plugin_ctx_t : public plugmod_t
 
     ~plugin_ctx_t() override
     {
-        //;! use on_event/modern
         unhook_from_notification_point(HT_UI, ui_callback, this);
     }
 };
@@ -155,7 +158,7 @@ plugin_t PLUGIN =
 {
     IDP_INTERFACE_VERSION,
     PLUGIN_MULTI,
-    []()->plugmod_t* { return new plugin_ctx_t; }, // initialize
+    []()->plugmod_t* { return new plugin_ctx_t; },
     nullptr,
     nullptr,
     nullptr,
