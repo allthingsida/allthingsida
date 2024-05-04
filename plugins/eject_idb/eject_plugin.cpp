@@ -93,7 +93,7 @@ struct plugin_ctx_t : public plugmod_t
             return;
 
         // unfortunately, `save_database` calls the main thread/UI to display success/failure messages
-        // thus, before 'ejecting', let's all UI messages
+        // thus, before 'ejecting', let's disable/disallow all UI messages from being processed.
         disable_ui = true;
         flush_buffers();
         qstring new_name = p.substr(0, idx) + ".ejected" + p.substr(idx);
