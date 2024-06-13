@@ -3,6 +3,7 @@
 
 import idaapi, idautils
 
+# ---------------------------------------------------------------------------
 is_64bits = idaapi.inf_is_64bit()
 ptr_size = 8 if is_64bits else 4
 
@@ -14,6 +15,7 @@ try:
     ied_tp = idaapi.Appcall.typedobj('IMAGE_EXPORT_DIRECTORY;')
     iid_tp = idaapi.Appcall.typedobj('IMAGE_IMPORT_DESCRIPTOR;')
     itd_tp = idaapi.Appcall.typedobj('IMAGE_TLS_DIRECTORY;')
+    ibr_tp = idaapi.Appcall.typedobj('IMAGE_BASE_RELOCATION;')
 
     print("Successfully loaded the required TILs and types.")
 except Exception as e:
@@ -21,7 +23,7 @@ except Exception as e:
     print(msg)
     raise e
 
-
+# ---------------------------------------------------------------------------
 def get_ptr(valobj, deref=False):
     if isinstance(valobj, idaapi.PyIdc_cvt_int64__):
         val = valobj.value
@@ -33,8 +35,24 @@ def get_ptr(valobj, deref=False):
     
     return val
 
-
+# ---------------------------------------------------------------------------
 def get_imgbase_by_name(name):
     name = name.lower()
     modules = [m for m in idautils.Modules() if m.name.lower().find(name) != -1]
     return 0 if not modules else modules[0].base
+
+# ---------------------------------------------------------------------------
+RELTYPE_TO_STR = {
+    0: "IMAGE_REL_BASED_ABSOLUTE",
+    1: "IMAGE_REL_BASED_HIGH",
+    2: "IMAGE_REL_BASED_LOW",
+    3: "IMAGE_REL_BASED_HIGHLOW",
+    4: "IMAGE_REL_BASED_HIGHADJ",
+    5: "IMAGE_REL_BASED_MACHINE_SPECIFIC_5",
+    6: "IMAGE_REL_BASED_RESERVED",
+    7: "IMAGE_REL_BASED_MACHINE_SPECIFIC_7",
+    8: "IMAGE_REL_BASED_MACHINE_SPECIFIC_8",
+    9: "IMAGE_REL_BASED_MACHINE_SPECIFIC_9",
+    10: "IMAGE_REL_BASED_DIR64"
+}
+reltype_to_str = lambda value: RELTYPE_TO_STR.get(value, "IMAGE_REL_BASED_UNKNOWN")

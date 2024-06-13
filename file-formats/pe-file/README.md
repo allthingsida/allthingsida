@@ -6,3 +6,6 @@
 - [list_imports.py](./list_imports.py): PE import table dumper for IDA | [Video](https://youtu.be/swaSwktjM94)
 - [list_exports.py](./list_exports.py): PE export table dumper for IDA | [Video](https://youtu.be/VjxPWbUJI9A)
 - [list_entrypoints.py](./list_entrypoints.py): PE entrypoint dumper for IDA (entrypoint and TLS callbacks) | [Video](https://youtu.be/9K8WaZ53oOs)
+- [list_relocs.py](./list_relocs.py): PE relocation entries dumper for IDA | [Video](https://www.youtube.com/watch?v=36Ncv-SMmI4)
+    - Applying relocation [example snippet](reloc_snippet.c)
+    
