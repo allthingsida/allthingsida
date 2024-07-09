@@ -16,6 +16,7 @@ Please read the [LICENSE](LICENSE) file for the terms and conditions of using th
 - [CTF](ctfs/README.md)
 - [Deobfuscation](deobfuscation/README.md)
 - [Decompiler](decompiler/README.md)
+- [Malware analysis](malware/README.md)
 - [File formats](file-formats/README.md)
 - [Operating systems](os/README.md)
 - [Collection of OpenAI related GPTs](gpts/README.md)
