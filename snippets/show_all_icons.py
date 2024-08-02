@@ -7,10 +7,12 @@ import idaapi
 from idaapi import Choose
 
 class MyChoose(Choose):
+    id = 0
     def __init__(self, max_icons):
+        MyChoose.id += 1
         Choose.__init__(
             self,
-            "Icons gallery",
+            f"Icons gallery #{MyChoose.id}",
             [["IconID", 10 | Choose.CHCOL_DEC]])
 
         self.max_icons = max_icons
@@ -27,7 +29,7 @@ class MyChoose(Choose):
     def OnGetIcon(self, n):
         return n
 
-n = idaapi.ask_long(1450, "How many icons to probe?")
+n = idaapi.ask_long(1417, "How many icons to probe?")
 if n is not None and (n > 0):
     c = MyChoose(n + 1)
     c.Show(False)
