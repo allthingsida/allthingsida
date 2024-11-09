@@ -9,6 +9,7 @@
 ## Google / Mandiant
 
 - [Y0da challenge - Mandiant's FlareOn10 CTF](./y0da_flareon10/README.md)
+- [Catbert challenge - Mandiant's FlareOn11 CTF](./catbert_flareon11/README.md)
 
 ## Blizzard Entertainment
 

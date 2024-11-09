@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "disasm.py",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/disasm/disasm.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--input", "${workspaceFolder}/files/your_mind.jpg.c4tb",
+                "--disasmx64",
+                "--output", "${workspaceFolder}/output.asm"
+            ]
+        },
+        {
+            "name": "bc3-gen.py",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/disasm/bc3-gen.py",
+            "console": "integratedTerminal",
+            ]
+        }
+    ]
+}
