@@ -37,14 +37,23 @@ docker start klee_instance1
 docker attach klee_instance1
 ```
 
-Running klee example.
+Running klee example:
 ```bash
-clang-11 bc11-klee.cpp -emit-llvm -c -g
+clang-11 bc1-klee.cpp -emit-llvm -c -g
 klee bc1-klee
 ktest-tool klee-out-8/test000002.ktest
 ```
 
 ## Links
+
+### Other solutions
+
+- Official solutions to all challenges: https://cloud.google.com/blog/topics/threat-intelligence/flareon-11-challenge-solutions
+- https://eversinc33.com/posts/flareon11.html
+- https://github.com/Salt-Mc/Flare-On/tree/main/FlareOn11/Ch10
+
+
+### Misc
 
 - https://github.com/binarly-io/efiXplorer
 
@@ -53,7 +62,8 @@ ktest-tool klee-out-8/test000002.ktest
 - CUDA - https://developer.nvidia.com/cuda-downloads?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exe_local
 - The PigletVM - https://github.com/vkazanov/bytecode-interpreters-post/?tab=readme-ov-file
 
-EDK 2
+### EDK 2
+
 - https://github.com/tianocore/tianocore.github.io/wiki/Getting-Started-with-EDK-II
 - https://medium.com/@kartikaybhardwaj77/writing-your-first-uefi-firmware-hello-world-with-edk-ii-ef153e8424e4
 - https://github.com/louisbyun/Creating-a-Simple-UEFI-Application-with-EDK2-and-Visual-Studio-2022-A-Beginner-s-Guide
