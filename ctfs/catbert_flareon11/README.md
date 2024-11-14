@@ -26,7 +26,7 @@ Here you will find notes and supporting files for the CatBert CTF challenge walk
 
 ## Klee notes
 
-Pulling the docker image and running it.
+Pulling the docker image and running it:
 
 ```bash
 docker pull klee/klee:2.3
@@ -48,6 +48,7 @@ ktest-tool klee-out-8/test000002.ktest
 
 ### Other solutions
 
+- https://github.com/OevreFlataeker/flareon11_ch10/
 - Official solutions to all challenges: https://cloud.google.com/blog/topics/threat-intelligence/flareon-11-challenge-solutions
 - https://eversinc33.com/posts/flareon11.html
 - https://github.com/Salt-Mc/Flare-On/tree/main/FlareOn11/Ch10
