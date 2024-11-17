@@ -33,7 +33,7 @@ def parse_arguments(byte_stream, pc, opcode_info):
             raise ValueError(f"Unknown argument type: {arg_name}")
     return pc, args
 
-def disassemble(byte_stream, use_pname:bool=False):
+def disassemble(byte_stream):
     pc = 0  # Program counter
     instructions = []
 
@@ -46,9 +46,7 @@ def disassemble(byte_stream, use_pname:bool=False):
             raise ValueError(f"Unknown opcode: {opcode_byte} at position {pc-1}")
 
         opcode_info = opcodes[opcode_byte]
-        mnemonic = opcode_info['friendly_name']
-        if use_pname and (t := opcode_info.get('pname')):
-            mnemonic = t.upper()
+        mnemonic = opcode_info['name']
         args = []
 
         # Parse arguments
@@ -71,8 +69,7 @@ def generate_assembly(byte_stream):
 
     # Set of opcodes that are jump instructions
     jump_opcodes = {
-        opcode for opcode, info in opcodes.items()
-        if info['friendly_name'].startswith(('jump', 'jnz', 'jz'))
+        opcode for opcode, info in opcodes.items() if info['name'].startswith('jmp')
     }
 
     # First pass: Identify all jump targets to create labels
@@ -124,9 +121,7 @@ def generate_assembly(byte_stream):
                 placeholders[arg_name] = f"0x{arg_value:04X}"
 
         # Build the disassembled instruction
-        mnemonic = opcode_info['friendly_name']
-        if t := opcode_info.get('pname'):
-            mnemonic = t.upper()
+        mnemonic = opcode_info['name']
         if args:
             instruction = f"{mnemonic} {' '.join(args)}"
         else:
@@ -181,11 +176,6 @@ def generate_assembly(byte_stream):
     full_assembly = '\n'.join(assembly_header + assembly_code + extra_code + data_section)
     return full_assembly
 
-def test_disassembly():
-    bytecode = bc1.bytecode
-    instructions = disassemble(bytecode, use_pname=True)
-    for i, instr in enumerate(instructions):
-        print(f"{i:04X}: {instr}")
 
 def main():
     parser = argparse.ArgumentParser(description="Disassemble or decompile bytecode.")
@@ -200,7 +190,7 @@ def main():
     output = []
 
     if args.disasm:
-        instructions = disassemble(bytecode, use_pname=True)
+        instructions = disassemble(bytecode)
         if not args.output:
             output.append("Disassembly:")
         output.extend(instructions)
