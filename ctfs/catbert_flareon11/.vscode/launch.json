@@ -19,7 +19,6 @@
             "request": "launch",
             "program": "${workspaceFolder}/disasm/bc3-gen.py",
             "console": "integratedTerminal",
-            ]
         }
     ]
 }
