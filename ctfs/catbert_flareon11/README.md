@@ -52,6 +52,7 @@ ktest-tool klee-out-8/test000002.ktest
 - Official solutions to all challenges: https://cloud.google.com/blog/topics/threat-intelligence/flareon-11-challenge-solutions
 - https://eversinc33.com/posts/flareon11.html
 - https://github.com/Salt-Mc/Flare-On/tree/main/FlareOn11/Ch10
+- https://washi1337.github.io/ctf-writeups/writeups/flare-on/2024/10/
 
 
 ### Misc
