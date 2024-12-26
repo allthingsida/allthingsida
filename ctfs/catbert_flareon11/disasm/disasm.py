@@ -54,6 +54,8 @@ def disassemble(byte_stream):
 
         # Build the disassembled instruction
         if args:
+            if 'imm16' in args:
+                args = [f"0x{args['imm16']:04X}"]
             instruction = f"{mnemonic} {' '.join(args)}"
         else:
             instruction = mnemonic

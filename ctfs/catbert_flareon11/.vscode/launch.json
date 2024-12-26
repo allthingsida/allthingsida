@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "disasm.py",
+            "name": "disasm_x64",
             "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/disasm/disasm.py",
@@ -11,6 +11,18 @@
                 "--input", "${workspaceFolder}/files/your_mind.jpg.c4tb",
                 "--disasmx64",
                 "--output", "${workspaceFolder}/output.asm"
+            ]
+        },
+        {
+            "name": "disasm",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/disasm/disasm.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--input", "${workspaceFolder}/files/your_mind.jpg.c4tb",
+                "--disasm",
+                "--output", "${workspaceFolder}/output.txt"
             ]
         },
         {
