@@ -1,6 +1,6 @@
 # AllThingsIDA code repository
 
-This is the official code repository for the All Things IDA [YouTube Channel](https://www.youtube.com/@allthingsida) and [Twitter account](https://twitter.com/allthingsida).
+This is the official code repository for the All Things IDA [YouTube Channel](https://www.youtube.com/@allthingsida) and [X account](https://x.com/allthingsida).
 
 Here, you'll find most of the source code featured in our videos. The code/scripts are intended solely for educational purposes and should not be deployed in production settings.
 
@@ -24,13 +24,4 @@ Please read the [LICENSE](LICENSE) file for the terms and conditions of using th
 - [C++ SDK](sdk/README.md)
 - [Using IDA](using_ida/README.md)
 - [Plugins](plugins/README.md)
-
-## Dependencies
-
-Some of the sample code requires external dependencies.
-
-First, make sure all the submodules are initialized:
-
-```bash
-git submodule update --init --recursive
-```
+- [Files and samples](files/README.md)
