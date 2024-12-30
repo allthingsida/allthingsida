@@ -2,6 +2,11 @@
 
 Here you will find notes and supporting files for the CatBert CTF challenge walkthrough video: [https://youtu.be/B1hE2z5JmLo](https://youtu.be/B1hE2z5JmLo).
 
+Additionally, you can watch the video series on how to implement a file loader and a processor module as well:
+
+- [Writing an IDA file loader for the CatBert CTF #flareon11](https://youtu.be/zMe0kpUoeS4)
+- [Writing an IDA processor module for the PigletVM](https://youtu.be/JfPU31HLHrc)
+
 ## Files
 
 - `angr` - Standalone driver C program with the VM interpreter.
