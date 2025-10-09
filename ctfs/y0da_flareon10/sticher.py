@@ -323,7 +323,7 @@ def dump_chunks(chunks, banner=None, footer=None):
         print(footer)
 
 # ---------------------------------------------------------------------------
-def _test(addr=0x180032701, do_stitch=False):
+def test(addr=0x180032701, do_stitch=False):
     global chunks, merged_chunks, instructions
     idaapi.msg_clear()
 
@@ -354,5 +354,5 @@ def _test(addr=0x180032701, do_stitch=False):
 
 # ---------------------------------------------------------------------------
 if __name__=='__main__':
-    _test(do_stitch=True, addr=idc.here())
+    test(do_stitch=True, addr=idc.here())
 
