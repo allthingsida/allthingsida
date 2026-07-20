@@ -20,7 +20,7 @@ Please read the [LICENSE](LICENSE) file for the terms and conditions of using th
 - [File formats](file-formats/README.md)
 - [Operating systems](os/README.md)
 - [Collection of OpenAI related GPTs](gpts/README.md)
-- [Presentations](presentations/README.md)
+- [Presentations](https://github.com/0xeb/presentations) (moved to its own repository)
 - [C++ SDK](sdk/README.md)
 - [Using IDA](using_ida/README.md)
 - [Plugins](plugins/README.md)
